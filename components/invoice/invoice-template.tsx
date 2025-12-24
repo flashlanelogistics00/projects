@@ -173,8 +173,8 @@ export function InvoiceTemplate({ shipment }: InvoiceTemplateProps) {
                                     <p className="text-xs text-gray-400 font-normal mt-0.5">{pkg?.description || 'Standard logistics services'}</p>
                                 </td>
                                 <td className="py-4 px-4">
-                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                        Approved
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        {pkg?.type || 'Package'}
                                     </span>
                                 </td>
                                 <td className="py-4 px-4 text-right text-gray-600 font-mono">${(cost?.shipping || 0).toFixed(2)}</td>
