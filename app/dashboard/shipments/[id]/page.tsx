@@ -226,7 +226,7 @@ export default async function ShipmentDetailPage({ params }: { params: Promise<{
                                             </td>
                                             <td className="px-4 py-3">
                                                 <span className="font-medium text-gray-900 dark:text-white">
-                                                    {event.status.split('_').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}
+                                                    {event.status.split('_').map((s: string) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}
                                                 </span>
                                             </td>
                                             <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
