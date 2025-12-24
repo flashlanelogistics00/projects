@@ -232,3 +232,57 @@ export async function updateShipment(shipmentId: string, formData: FormData) {
     revalidatePath('/dashboard/shipments')
     redirect(`/dashboard/shipments/${shipmentId}`)
 }
+
+// Delete tracking event
+export async function deleteTrackingEvent(eventId: string, shipmentId: string) {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+        throw new Error('Unauthorized')
+    }
+
+    const { error } = await supabase
+        .from('tracking_events')
+        .delete()
+        .eq('id', eventId)
+
+    if (error) {
+        console.error('Error deleting event:', error)
+        throw new Error('Failed to delete tracking event')
+    }
+
+    revalidatePath(`/dashboard/shipments/${shipmentId}`)
+}
+
+// Update tracking event
+export async function updateTrackingEvent(eventId: string, shipmentId: string, data: {
+    status: string,
+    location: string,
+    description: string,
+    timestamp: string
+}) {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+        throw new Error('Unauthorized')
+    }
+
+    const { error } = await supabase
+        .from('tracking_events')
+        .update({
+            status: data.status,
+            location: data.location,
+            description: data.description,
+            timestamp: data.timestamp,
+        })
+        .eq('id', eventId)
+
+    if (error) {
+        console.error('Error updating event:', error)
+        throw new Error('Failed to update tracking event')
+    }
+
+    revalidatePath(`/dashboard/shipments/${shipmentId}`)
+}

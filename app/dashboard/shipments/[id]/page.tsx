@@ -5,6 +5,7 @@ import { ArrowLeft, Package, User, MapPin, Clock, DollarSign, FileText, Truck, P
 import { Metadata } from "next"
 import { StatusUpdateForm } from "../StatusUpdateForm"
 import { DeleteShipmentButton } from "@/components/shipments/delete-button"
+import { TrackingEventsManager } from "@/components/shipments/tracking-events-manager"
 
 export const dynamic = 'force-dynamic'
 
@@ -208,45 +209,7 @@ export default async function ShipmentDetailPage({ params }: { params: Promise<{
                         <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                             <Clock className="w-5 h-5 text-purple-600" /> Tracking History
                         </h2>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left text-sm">
-                                <thead className="bg-gray-50 dark:bg-gray-900/50">
-                                    <tr>
-                                        <th className="px-4 py-3 font-semibold text-gray-900 dark:text-white rounded-l-lg">Date & Time</th>
-                                        <th className="px-4 py-3 font-semibold text-gray-900 dark:text-white">Status</th>
-                                        <th className="px-4 py-3 font-semibold text-gray-900 dark:text-white">Location</th>
-                                        <th className="px-4 py-3 font-semibold text-gray-900 dark:text-white rounded-r-lg">Notes</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                                    {events?.map((event) => (
-                                        <tr key={event.id} className="hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
-                                            <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
-                                                {new Date(event.timestamp).toLocaleString()}
-                                            </td>
-                                            <td className="px-4 py-3">
-                                                <span className="font-medium text-gray-900 dark:text-white">
-                                                    {event.status.split('_').map((s: string) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}
-                                                </span>
-                                            </td>
-                                            <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
-                                                {event.location}
-                                            </td>
-                                            <td className="px-4 py-3 text-gray-500 dark:text-gray-400">
-                                                {event.description}
-                                            </td>
-                                        </tr>
-                                    ))}
-                                    {(!events || events.length === 0) && (
-                                        <tr>
-                                            <td colSpan={4} className="px-4 py-8 text-center text-gray-500 dark:text-gray-400">
-                                                No tracking events recorded yet.
-                                            </td>
-                                        </tr>
-                                    )}
-                                </tbody>
-                            </table>
-                        </div>
+                        <TrackingEventsManager events={events || []} shipmentId={shipment.id} />
                     </div>
 
                     {/* Cost Details */}
