@@ -344,11 +344,11 @@ function TrackingContent() {
                         </div>
 
                         {/* Banner */}
-                        <div className="bg-gradient-to-r from-red-500 to-pink-600 rounded-3xl p-8 text-white relative overflow-hidden group hover:shadow-xl transition-shadow cursor-pointer">
+                        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 text-white relative overflow-hidden group hover:shadow-xl transition-shadow cursor-pointer">
                             <div className="relative z-10">
-                                <h3 className="font-bold text-3xl mb-2">SAVE THIS TRACKING</h3>
-                                <p className="opacity-90 max-w-md">
-                                    Bookmark this page or save your tracking number: <span className="font-mono font-bold bg-white/20 px-2 py-1 rounded">{shipment.tracking_number}</span>
+                                <h3 className="font-bold text-3xl mb-2 italic">SAVE THIS TRACKING</h3>
+                                <p className="opacity-95 max-w-md text-blue-50">
+                                    Bookmark this page or save your tracking number: <span className="font-mono font-bold bg-white/20 px-2 py-1 rounded text-white border border-white/30 backdrop-blur-sm">{shipment.tracking_number}</span>
                                 </p>
                             </div>
                             <Printer className="absolute right-8 bottom-8 w-24 h-24 opacity-10 rotate-12 group-hover:scale-110 transition-transform" />
