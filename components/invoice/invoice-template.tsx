@@ -160,7 +160,7 @@ export function InvoiceTemplate({ shipment }: InvoiceTemplateProps) {
                         <thead className="bg-gray-50 border-b border-gray-100">
                             <tr>
                                 <th className="py-3 px-4 text-left text-[10px] uppercase font-bold text-gray-500 tracking-wider">Description</th>
-                                <th className="py-3 px-4 text-left text-[10px] uppercase font-bold text-gray-500 tracking-wider">Type</th>
+                                <th className="py-3 px-4 text-left text-[10px] uppercase font-bold text-gray-500 tracking-wider">Package Type</th>
                                 <th className="py-3 px-4 text-right text-[10px] uppercase font-bold text-gray-500 tracking-wider">Shipping</th>
                                 <th className="py-3 px-4 text-right text-[10px] uppercase font-bold text-gray-500 tracking-wider">Tax/Fees</th>
                                 <th className="py-3 px-4 text-right text-[10px] uppercase font-bold text-gray-500 tracking-wider">Total</th>
