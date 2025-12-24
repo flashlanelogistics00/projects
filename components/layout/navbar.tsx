@@ -38,22 +38,16 @@ export function Navbar() {
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="relative flex items-center justify-center w-24 h-24 group-hover:scale-105 transition-transform">
+                <Link href="/" className="group">
+                    <div className="h-10 w-auto group-hover:scale-105 transition-transform flex items-center">
                         <img
                             src="/logo.png"
                             alt="FlashLane Logo"
                             className={cn(
-                                "w-full h-full object-contain transition-all duration-300",
+                                "h-full w-auto object-contain transition-all duration-300",
                                 !isScrolled ? "brightness-0 invert" : "dark:brightness-0 dark:invert"
                             )}
                         />
-                    </div>
-                    <div className="flex flex-col">
-                        <span className="font-bold text-lg leading-tight tracking-tight">FlashLane</span>
-                        <span className={cn("text-[10px] font-medium tracking-widest uppercase opacity-80", isScrolled ? "text-blue-600 dark:text-blue-400" : "text-blue-100")}>
-                            Logistics
-                        </span>
                     </div>
                 </Link>
 
