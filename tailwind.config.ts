@@ -51,6 +51,16 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        brand: {
+          blue: "hsl(var(--brand-blue))",
+          indigo: "hsl(var(--brand-indigo))",
+          cyan: "hsl(var(--brand-cyan))",
+          emerald: "hsl(var(--brand-emerald))",
+          violet: "hsl(var(--brand-violet))",
+          amber: "hsl(var(--brand-amber))",
+          rose: "hsl(var(--brand-rose))",
+          gold: "hsl(var(--brand-gold))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
