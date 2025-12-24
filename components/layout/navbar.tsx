@@ -36,7 +36,7 @@ export function Navbar() {
                     : 'bg-transparent text-white py-4'
             )}
         >
-            <div className="container mx-auto px-4 flex items-center justify-between">
+            <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="group">
                     <div className="h-10 w-auto group-hover:scale-105 transition-transform flex items-center">
@@ -66,11 +66,6 @@ export function Navbar() {
                         </Link>
                     ))}
                 </nav>
-
-                {/* CTA Button - Removed */}
-                <div className="hidden md:flex items-center gap-4">
-                    {/* Login removed */}
-                </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
