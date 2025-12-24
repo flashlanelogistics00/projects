@@ -65,7 +65,7 @@ export function TrackingProgress({ status }: TrackingProgressProps) {
                                     className={cn(
                                         "absolute top-5 -left-1/2 w-full h-1",
                                         index <= safeIndex
-                                            ? (isCustomsHold ? "bg-amber-500" : "bg-blue-600")
+                                            ? (isCustomsHold ? "bg-red-500" : "bg-blue-600")
                                             : "bg-gray-200 dark:bg-gray-700"
                                     )}
                                 />
@@ -77,7 +77,7 @@ export function TrackingProgress({ status }: TrackingProgressProps) {
                                     "relative z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300",
                                     isActive
                                         ? (isCustomsHold
-                                            ? "bg-amber-100 text-amber-600 border-2 border-amber-600 shadow-lg shadow-amber-600/30 animate-pulse"
+                                            ? "bg-red-100 text-red-600 border-2 border-red-600 shadow-lg shadow-red-600/30 animate-slow-pulse"
                                             : "bg-blue-600 text-white shadow-lg shadow-blue-600/30")
                                         : "bg-gray-100 dark:bg-gray-800 text-gray-400 border border-gray-200 dark:border-gray-700"
                                 )}
@@ -90,14 +90,14 @@ export function TrackingProgress({ status }: TrackingProgressProps) {
                                 <p className={cn(
                                     "font-semibold text-sm",
                                     isActive ? "text-gray-900 dark:text-white" : "text-gray-400",
-                                    isCustomsHold && "text-amber-600 dark:text-amber-400"
+                                    isCustomsHold && "text-red-600 dark:text-red-400"
                                 )}>
                                     {step.label}
                                 </p>
                                 {isCurrent && (
                                     <p className={cn(
                                         "text-xs font-medium mt-1",
-                                        isCustomsHold ? "text-amber-600" : "text-blue-600"
+                                        isCustomsHold ? "text-red-600" : "text-blue-600"
                                     )}>
                                         {isCustomsHold ? "Action Required" : "Current"}
                                     </p>
