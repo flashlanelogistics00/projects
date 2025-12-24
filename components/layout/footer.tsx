@@ -83,7 +83,7 @@ export function Footer() {
                         <div>
                             <h4 className="font-bold mb-6">Contact Us</h4>
                             <ul className="space-y-3 text-sm text-gray-400">
-                                <li>support@flashlane.com</li>
+                                <li>support@flashlanelogistics.com</li>
                                 <li>+1 (555) 123-4567</li>
                                 <li>123 Logistics Way, Suite 100</li>
                                 <li>New York, NY 10001</li>
