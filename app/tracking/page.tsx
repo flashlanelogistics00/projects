@@ -344,14 +344,21 @@ function TrackingContent() {
                         </div>
 
                         {/* Banner */}
-                        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 text-white relative overflow-hidden group hover:shadow-xl transition-shadow cursor-pointer">
+                        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 text-white relative overflow-hidden group hover:shadow-xl transition-shadow cursor-default">
                             <div className="relative z-10">
-                                <h3 className="font-bold text-3xl mb-2 italic">SAVE THIS TRACKING</h3>
-                                <p className="opacity-95 max-w-md text-blue-50">
-                                    Bookmark this page or save your tracking number: <span className="font-mono font-bold bg-white/20 px-2 py-1 rounded text-white border border-white/30 backdrop-blur-sm">{shipment.tracking_number}</span>
-                                </p>
+                                <h3 className="font-bold text-3xl mb-3 italic tracking-tight">SAVE THIS TRACKING</h3>
+                                <div className="space-y-4">
+                                    <p className="opacity-90 text-blue-50 text-lg">
+                                        Bookmark this page or save your tracking ID for future reference:
+                                    </p>
+                                    <div className="inline-block bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 shadow-inner group-hover:bg-white/20 transition-colors">
+                                        <span className="font-mono text-2xl font-black text-white whitespace-nowrap tracking-wider">
+                                            {shipment.tracking_number}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <Printer className="absolute right-8 bottom-8 w-24 h-24 opacity-10 rotate-12 group-hover:scale-110 transition-transform" />
+                            <Printer className="absolute right-8 bottom-8 w-24 h-24 opacity-10 rotate-12 group-hover:scale-110 group-hover:opacity-20 transition-all duration-500" />
                         </div>
 
                         {/* Print Invoice Button (Bottom) */}
